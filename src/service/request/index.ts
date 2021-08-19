@@ -1,19 +1,19 @@
 import axios from 'axios'
 import type { AxiosInstance } from 'axios'
-import type { YDRequestConfig, YDRequestInterceptors } from './type'
+import type { YdRequestConfig, YdRequestInterceptors } from './type'
 
 import { ElLoading } from 'element-plus'
 import { ILoadingInstance } from 'element-plus/lib/el-loading/src/loading.type'
 
 const DEFAULT_LOADING = true
 
-class YDRequest {
+class YdRequest {
   instance: AxiosInstance
-  interceptors?: YDRequestInterceptors
+  interceptors?: YdRequestInterceptors
   showLoading: boolean
   loading?: ILoadingInstance
 
-  constructor(config: YDRequestConfig) {
+  constructor(config: YdRequestConfig) {
     // 创建 axios 实例
     this.instance = axios.create(config)
 
@@ -67,7 +67,7 @@ class YDRequest {
     )
   }
 
-  request<T>(config: YDRequestConfig<T>): Promise<T> {
+  request<T = any>(config: YdRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       // 1.单个请求对请求config的处理
       if (config.interceptors?.requestInterceptor) {
@@ -102,21 +102,21 @@ class YDRequest {
     })
   }
 
-  get<T>(config: YDRequestConfig<T>): Promise<T> {
+  get<T = any>(config: YdRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'GET' })
   }
 
-  post<T>(config: YDRequestConfig<T>): Promise<T> {
+  post<T = any>(config: YdRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'POST' })
   }
 
-  delete<T>(config: YDRequestConfig<T>): Promise<T> {
+  delete<T = any>(config: YdRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'DELETE' })
   }
 
-  patch<T>(config: YDRequestConfig<T>): Promise<T> {
+  patch<T = any>(config: YdRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'PATCH' })
   }
 }
 
-export default YDRequest
+export default YdRequest

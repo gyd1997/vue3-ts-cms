@@ -21,13 +21,24 @@ import {
   ElMenu,
   ElSubmenu,
   ElMenuItem,
-  ElMenuItemGroup
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTableColumn,
+  ElPagination
 } from 'element-plus'
 import 'element-plus/lib/theme-chalk/base.css'
 
 const components = [
   ElButton,
-  ElTable,
   ElAlert,
   ElAside,
   ElAutocomplete,
@@ -47,7 +58,20 @@ const components = [
   ElMenu,
   ElSubmenu,
   ElMenuItem,
-  ElMenuItemGroup
+  ElMenuItemGroup,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElTable,
+  ElTableColumn,
+  ElPagination
 ]
 
 export default function (app: App): void {

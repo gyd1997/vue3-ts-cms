@@ -1,5 +1,6 @@
-import YDRequest from '../index'
-import { IAccount, IDataType, ILoginResult } from './types'
+import YdRequest from '../index'
+import { IAccount, ILoginResult } from './types'
+import { IDataType } from '../types'
 
 enum LoginApi {
   AccountLogin = '/login',
@@ -8,21 +9,21 @@ enum LoginApi {
 }
 
 export function accountLoginRequest(account: IAccount) {
-  return YDRequest.post<IDataType<ILoginResult>>({
+  return YdRequest.post<IDataType<ILoginResult>>({
     url: LoginApi.AccountLogin,
     data: account
   })
 }
 
 export function requestUserInfoById(id: number) {
-  return YDRequest.get<IDataType>({
+  return YdRequest.get<IDataType>({
     url: LoginApi.LoginUserInfo + id,
     showLoading: false
   })
 }
 
 export function requestUserMenusByRoleId(id: number) {
-  return YDRequest.get<IDataType>({
+  return YdRequest.get<IDataType>({
     url: LoginApi.UserMenus + id + '/menu',
     showLoading: false
   })

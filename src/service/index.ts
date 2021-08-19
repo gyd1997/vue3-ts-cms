@@ -1,8 +1,8 @@
-import YDRequest from './request'
+import YdRequest from './request'
 import { BASE_URL, TIME_OUT } from './request/config'
 import localCache from '@/utils/caches'
 
-export default new YDRequest({
+export default new YdRequest({
   baseURL: BASE_URL,
   timeout: TIME_OUT,
   interceptors: {
